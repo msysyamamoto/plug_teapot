@@ -17,3 +17,7 @@ If [available in Hex](https://hex.pm/docs/publish), the package can be installed
         def application do
           [applications: [:plug_teapot]]
         end
+
+## LICENSE
+
+This software is released under the MIT License, see LICENSE.
