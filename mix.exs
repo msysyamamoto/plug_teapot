@@ -15,7 +15,7 @@ defmodule PlugTeapot.Mixfile do
   #
   # Type "mix help compile.app" for more information
   def application do
-    [applications: [:logger]]
+    [applications: [:logger, :plug]]
   end
 
   # Dependencies can be Hex packages:
@@ -28,7 +28,9 @@ defmodule PlugTeapot.Mixfile do
   #
   # Type "mix help deps" for more examples and options
   defp deps do
-    []
+    [{:plug, "~> 1.0"},
+     {:ex_doc, ">= 0.0.0", only: :docs},
+     {:earmark, ">= 0.0.0", only: :docs}]
   end
 
   defp package do
