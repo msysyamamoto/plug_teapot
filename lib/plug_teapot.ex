@@ -1,0 +1,2 @@
+defmodule PlugTeapot do
+end
