@@ -1,14 +1,14 @@
 defmodule PlugTeapot do
-  alias Plug.Conn
+  import Plug.Conn, only: [put_status: 2, put_resp_header: 3, send_resp: 3, halt: 1]
   alias Plug.Conn.Status
-  
+
   @behaviour Plug
 
   def init(default), do: default
 
   def call(conn, opts) do
       conn
-      |> Conn.put_status(Status.code(:im_a_teapot))
+      |> put_status(Status.code(:im_a_teapot))
       |> resp(opts)
   end
 
@@ -18,9 +18,9 @@ defmodule PlugTeapot do
               conn
           _ ->
               conn
-              |> Conn.put_resp_header("content-type", "text/plain")
-              |> Conn.send_resp(conn.status, "I'm a teapot")
-              |> Conn.halt
+              |> put_resp_header("content-type", "text/plain")
+              |> send_resp(conn.status, "I'm a teapot")
+              |> halt
       end
   end
 end
