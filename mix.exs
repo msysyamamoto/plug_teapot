@@ -8,7 +8,8 @@ defmodule PlugTeapot.Mixfile do
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
      deps: deps,
-     package: package]
+     package: package,
+     description: description]
   end
 
   # Configuration for the OTP application
@@ -37,5 +38,9 @@ defmodule PlugTeapot.Mixfile do
     [maintainers: [],
      licenses: ["MIT"],
      links: %{}]
+  end
+
+  defp description do
+      "Support HTTP status 418"
   end
 end
